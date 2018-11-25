@@ -1,8 +1,9 @@
 package cerner.patient;
 
 public class Disease {
+	private String diseaseID;
 	private String diseaseName;
-	
+
 	public void setDiseaseName(String diseaseName) {
 		this.diseaseName=diseaseName;
 	}

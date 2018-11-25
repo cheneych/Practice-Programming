@@ -1,26 +1,30 @@
 package cerner.patient;
 import java.util.*;
 
-public class Doseage {
-	private Date timeOfDay;
-	private float dose;
+
+public class Doseage   {
+	private Calendar startDate;
+	private DoseTime doseTime;
+	private float doseQuantity;
+	//private 
 	
-	public Date getTimeOfDay() {
-		return timeOfDay;
+	public DoseTime getTimeOfDay() {
+		return this.doseTime;
 	}
-	public void setTimeOfDay(Date timeOfDay) {
-		this.timeOfDay = timeOfDay;
+	public void setDoseTime(DoseTime doseTime) {
+		this.doseTime=doseTime;
+		
 	}
-	public float getDose() {
-		return dose;
+	public float getDoseQuantity() {
+		return doseQuantity;
 	}
-	public void setDose(float dose) {
-		this.dose = dose;
+	public void setDoseQuantity(float doseQuantity) {
+		this.doseQuantity = doseQuantity;
 	}
 	
-	public Doseage(Date timeOfDay,float dose) {
-		this.timeOfDay=timeOfDay;
-		this.dose=dose;
+	public Doseage(DoseTime doseTime,float doseQuantity) {
+		this.doseTime=doseTime;
+		this.doseQuantity=doseQuantity;
 	}
 
 }

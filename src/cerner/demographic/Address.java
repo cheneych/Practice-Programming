@@ -5,7 +5,7 @@ public class Address {
 	private String state;
 	private String street;
 	private String zipCode;
-	private String phoneNumber; // or should use integer
+	private String phoneNumber; // or should use integer or if multiple phone numbers
 	
 	public String getCountry() {
 		return country;

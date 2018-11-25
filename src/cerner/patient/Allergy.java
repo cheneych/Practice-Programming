@@ -1,8 +1,10 @@
 package cerner.patient;
 
 public class Allergy {
+	private String allergtID;
 	private String allergyName;
 	private Severity severiety;
+	private String symptomes;
 	public String getAllergyName() {
 		return allergyName;
 	}
@@ -14,5 +16,9 @@ public class Allergy {
 	}
 	public void setSeveriety(Severity severiety) {
 		this.severiety = severiety;
+	}
+	public Allergy(String allergyName,Severity severiety) {
+		this.allergyName=allergyName;
+		this.severiety =severiety;
 	}
 }

@@ -5,6 +5,7 @@ public class Temperature {
 
 	private float temperature; //temperature in Degrees
 	private Location location;
+	private Metric metric;
 	
 	public void setTemperature(float temperature){
 		this.temperature=temperature;
@@ -22,6 +23,7 @@ public class Temperature {
 	public Temperature(float temperature,Location location) {
 		this.temperature=temperature;
 		this.location=location;
+		this.setMetric(Metric.CELSIUS);
 	}
 	
 	//to convert from Degrees to fahrenheit
@@ -30,6 +32,12 @@ public class Temperature {
 	}
 	public float getTemperatureInKelvin() {
 		return (float) (this.temperature+273.15);
+	}
+	public Metric getMetric() {
+		return metric;
+	}
+	public void setMetric(Metric metric) {
+		this.metric = metric;
 	}
 	
 	
