@@ -1,10 +1,14 @@
 package cerner.demographic;
 
+import java.util.*;
+
 public class Person {
 	private Name name;
+	private DateOfBirth dateOfBirth;
 	private int age;
 	private Gender gender;
 	private Address address;
+	private List<PhoneNumber> phoneNumbers;
 	private String SSN;
 	public Name getName() {
 		return name;
@@ -38,6 +42,22 @@ public class Person {
 		this.age=age;
 		this.gender=gender;
 		this.address=address;
+	}
+	public Person(Name name, int age,Gender gender,Address address, DateOfBirth dateOfBirth) {
+		this(name,age,gender,address);
+		this.dateOfBirth=dateOfBirth;
+	}
+	public DateOfBirth getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(DateOfBirth dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	public String getSSN() {
+		return SSN;
+	}
+	public void setSSN(String sSN) {
+		SSN = sSN;
 	}	
 	
 }

@@ -23,20 +23,46 @@ public class Temperature {
 	public Temperature(float temperature,Location location) {
 		this.temperature=temperature;
 		this.location=location;
-		this.setMetric(Metric.CELSIUS);
+		this.setMetric(Metric.CELSIUS); //default value
 	}
 	
 	//to convert from Degrees to fahrenheit
 	public float getTemperatureInFahrenheit() {
-		return(this.temperature*(9/5)+32);
+		if(this.metric==Metric.CELSIUS) {
+			return(this.temperature*(9/5)+32);
+		}else if(this.metric==Metric.KELVIN) {
+			return (9*(this.temperature - 273)/5 + 32);
+		}
+		return this.temperature;
+		
 	}
 	public float getTemperatureInKelvin() {
-		return (float) (this.temperature+273.15);
+		if(this.metric==Metric.CELSIUS) {
+			return (float) (this.temperature+273);
+		}else if(this.metric==Metric.FARANHEIT) {
+			return (float) (5 * (this.temperature - 32)/9 + 273.15);
+		}
+		return this.temperature;
+		
+	}
+	public float getTemperatureInCelsius() {
+		if(this.metric==Metric.KELVIN) {
+			return (float) (this.temperature-273);
+		}else if(this.metric==Metric.FARANHEIT) {
+			return (5* (this.temperature - 32)/9);
+		}
+		return this.temperature;
 	}
 	public Metric getMetric() {
 		return metric;
 	}
 	public void setMetric(Metric metric) {
+		this.metric = metric;
+	}
+	public Temperature(float temperature, Location location, Metric metric) {
+		super();
+		this.temperature = temperature;
+		this.location = location;
 		this.metric = metric;
 	}
 	
