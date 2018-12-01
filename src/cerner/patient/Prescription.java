@@ -7,9 +7,10 @@ import cerner.demographic.*;
 public class Prescription {
 
 	private Name doctorName;
-	private Name patientName;
+	private Name patientName;//add patient id
 	private Name hospitalName;
-	private Map<Medication,Doseage> medicine;
+	private List<Doseage> medicine;
+	
 	public Name getDoctorName() {
 		return doctorName;
 	}
@@ -28,13 +29,13 @@ public class Prescription {
 	public void setHospitalName(Name hospitalName) {
 		this.hospitalName = hospitalName;
 	}
-	public Map<Medication, Doseage> getMedicine() {
+	public List<Doseage> getMedicine() {
 		return medicine;
 	}
-	public void setMedicine(Map<Medication, Doseage> medicine) {
+	public void setMedicine(List<Doseage> medicine) {
 		this.medicine = medicine;
 	}
-	public Prescription(Name doctorName, Name patientName, Name hospitalName, Map<Medication, Doseage> medicine) {
+	public Prescription(Name doctorName, Name patientName, Name hospitalName, List<Doseage> medicine) {
 		this.doctorName = doctorName;
 		this.patientName = patientName;
 		this.hospitalName = hospitalName;
@@ -43,10 +44,8 @@ public class Prescription {
 	public Prescription() {
 	}
 	
-	public void displayPrescription() {
-		for(Medication med:medicine.keySet()) {
-			System.out.println(med.toString() + " "+ medicine.get(med).toString() );
-		}
+	
+	
 	}
 	
-}
+

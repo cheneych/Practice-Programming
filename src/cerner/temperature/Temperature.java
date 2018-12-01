@@ -3,19 +3,15 @@ package cerner.temperature;
 
 public class Temperature {
 
-	private float temperature; //temperature in Degrees
-	private Location location;
-	private Metric metric;
+	final private float temperature; //temperature in Degrees
+	final private Location location;
+	final private Metric metric;
 	
-	public void setTemperature(float temperature){
-		this.temperature=temperature;
-	}
+	
 	public float getTemperature() {
 		return this.temperature;
 	}
-	public void setLocation(Location location) {
-		this.location=location;
-	}
+	
 	public Location getLocation() {
 		return this.location;
 	}
@@ -23,7 +19,7 @@ public class Temperature {
 	public Temperature(float temperature,Location location) {
 		this.temperature=temperature;
 		this.location=location;
-		this.setMetric(Metric.CELSIUS); //default value
+		this.metric =Metric.CELSIUS; //default value
 	}
 	
 	//to convert from Degrees to fahrenheit
@@ -56,9 +52,7 @@ public class Temperature {
 	public Metric getMetric() {
 		return metric;
 	}
-	public void setMetric(Metric metric) {
-		this.metric = metric;
-	}
+	
 	public Temperature(float temperature, Location location, Metric metric) {
 		super();
 		this.temperature = temperature;
